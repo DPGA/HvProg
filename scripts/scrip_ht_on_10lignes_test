@@ -1,0 +1,156 @@
+#!/bin/bash
+
+echo Script HT
+
+echo LIGNES 1 2 3
+
+echo Voie 0
+./ht --serial 1 --hton --ch 0 --hv 1250
+echo Voie 1
+./ht --serial 1 --hton --ch 1 --hv 1015
+echo Voie 2
+./ht --serial 1 --hton --ch 2 --hv 1025
+echo Voie 3
+./ht --serial 1 --hton --ch 3 --hv 1010
+echo Voie 4
+./ht --serial 1 --hton --ch 4 --hv 941
+echo Voie 5
+./ht --serial 1 --hton --ch 5 --hv 970
+echo Voie 6
+./ht --serial 1 --hton --ch 6 --hv 1113
+echo Voie 7
+./ht --serial 1 --hton --ch 7 --hv 1034
+echo Voie 8
+./ht --serial 1 --hton --ch 8 --hv 985
+echo Voie 9
+./ht --serial 1 --hton --ch 9 --hv 1012
+echo Voie 10
+./ht --serial 1 --hton --ch 10 --hv 1042
+echo Voie 11
+./ht --serial 1 --hton --ch 11 --hv 966
+echo Voie 12
+./ht --serial 1 --hton --ch 12 --hv 1028
+echo Voie 13
+./ht --serial 1 --hton --ch 13 --hv 939
+echo Voie 14
+./ht --serial 1 --hton --ch 14 --hv 946
+echo Voie 15
+./ht --serial 1 --hton --ch 15 --hv 959
+
+
+echo LIGNE 4 5 6
+
+echo Voie 0
+./ht --serial 3 --hton --ch 0 --hv 1250
+echo Voie 1
+./ht --serial 3 --hton --ch 1 --hv 979
+echo Voie 2
+./ht --serial 3 --hton --ch 2 --hv 1049
+echo Voie 3
+./ht --serial 3 --hton --ch 3 --hv 1003
+# PB AVEC LA 4 JE N'ARRIVE PAS A MONTER AU DESSUS DE 935V
+#echo Voie 4
+#./ht --serial 3 --hton --ch 4 --hv 1000
+echo Voie 5
+./ht --serial 3 --hton --ch 5 --hv 1000
+echo Voie 6
+./ht --serial 3 --hton --ch 6 --hv 1066
+echo Voie 7
+./ht --serial 3 --hton --ch 7 --hv 975
+echo Voie 8
+./ht --serial 3 --hton --ch 8 --hv 1008
+echo Voie 9
+./ht --serial 3 --hton --ch 9 --hv 984
+echo Voie 10
+./ht --serial 3 --hton --ch 10 --hv 1001
+#echo Voie 11
+#./ht --serial 3 --hton --ch 11 --hv 977
+#echo Voie 12
+#./ht --serial 3 --hton --ch 12 --hv 995
+#echo Voie 13
+#./ht --serial 3 --hton --ch 13 --hv 967
+#echo Voie 14
+#./ht --serial 3 --hton --ch 14 --hv 964
+# PB AVEC LA 15 JE N'ARRIVE PAS A MONTER AU DESSUS DE 935V
+#echo Voie 15
+#./ht --serial 3 --hton --ch 15 --hv 0
+
+
+echo LIGNE 7 8 9 
+
+echo Voie 0
+./ht --serial 2 --hton --ch 0 --hv 1250
+#echo Voie 1
+#./ht --serial 2 --hton --ch 1 --hv 985
+#echo Voie 2
+#./ht --serial 2 --hton --ch 2 --hv 986
+echo Voie 3
+./ht --serial 2 --hton --ch 3 --hv 966
+#echo Voie 4
+#./ht --serial 2 --hton --ch 4 --hv 986
+#echo Voie 5
+#./ht --serial 2 --hton --ch 5 --hv 985
+echo Voie 6
+./ht --serial 2 --hton --ch 6 --hv 985
+echo Voie 7
+./ht --serial 2 --hton --ch 7 --hv 986
+echo Voie 8
+./ht --serial 2 --hton --ch 8 --hv 986
+echo Voie 9
+./ht --serial 2 --hton --ch 9 --hv 985
+echo Voie 10
+./ht --serial 2 --hton --ch 10 --hv 986
+echo Voie 11
+./ht --serial 2 --hton --ch 11 --hv 986
+echo Voie 12
+./ht --serial 2 --hton --ch 12 --hv 956
+echo Voie 13
+./ht --serial 2 --hton --ch 13 --hv 975
+echo Voie 14
+./ht --serial 2 --hton --ch 14 --hv 975
+echo Voie 15
+./ht --serial 2 --hton --ch 15 --hv 985
+
+
+
+echo LIGNE 10 11 12
+
+echo Voie 0
+./ht --serial 4 --hton --ch 0 --hv 1400
+echo Voie 1
+./ht --serial 4 --hton --ch 1 --hv 988
+echo Voie 2
+./ht --serial 4 --hton --ch 2 --hv 1056
+echo Voie 3
+./ht --serial 4 --hton --ch 3 --hv 1005
+echo Voie 4
+./ht --serial 4 --hton --ch 4 --hv 937
+echo Voie 5
+./ht --serial 4 --hton --ch 5 --hv 973
+echo Voie 6
+./ht --serial 4 --hton --ch 6 --hv 1002
+echo Voie 7
+./ht --serial 4 --hton --ch 7 --hv 1069
+echo Voie 8
+./ht --serial 4 --hton --ch 8 --hv 1016
+echo Voie 9
+./ht --serial 4 --hton --ch 9 --hv 992
+echo Voie 10
+./ht --serial 4 --hton --ch 10 --hv 1099
+echo Voie 11
+./ht --serial 4 --hton --ch 11 --hv 1175
+echo Voie 12
+./ht --serial 4 --hton --ch 12 --hv 1014
+echo Voie 13
+./ht --serial 4 --hton --ch 13 --hv 966
+echo Voie 14
+./ht --serial 4 --hton --ch 14 --hv 1170
+echo Voie 15
+./ht --serial 4 --hton --ch 15 --hv 1136
+
+
+
+
+
+
+

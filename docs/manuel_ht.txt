@@ -1,0 +1,22 @@
+monter une haute tension :
+./ht --serial num carte --hton --ch num canal --hv valeur HT en V
+exemple :
+./ht --serial 2 --hton --ch 0 --hv 500
+monte le canal 0 à 500 de la carte numero 2
+
+afficher les valeurs des HT
+./ht --serial num carte --display
+
+couper la HT primaire 
+
+./ht --serial num carte --htoff
+
+Attention, garde en mémoire les dernière valeurs injectées. Ainsi, au prochain hton, les valeurs de ht seront celles entrées précédemment, sauf si on rajoute
+une valeur de HT comme argument.
+
+_NEW_NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW__NEW_
+
+./ht --serveur portnum <--verbose>
+--serveur : mode prioritaire (incompatible avec les autres) 
+portnum : numero du port de dialogue
+-- verbose : option 

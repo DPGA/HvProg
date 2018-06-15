@@ -1,0 +1,42 @@
+#!/bin/bash
+source ../../root/root/bin/thisroot.sh
+echo Script HT
+
+echo LIGNES 4
+
+
+echo Voie 0
+./ht-caen --serial 4 --hton --ch 0 --hv 1400
+echo Voie 1
+./ht-caen --serial 4 --hton --ch 1 --hv 1000
+echo Voie 2
+./ht-caen --serial 4 --hton --ch 2 --hv 1020
+echo Voie 3
+./ht-caen --serial 4 --hton --ch 3 --hv 1020
+echo Voie 4
+./ht-caen --serial 4 --hton --ch 4 --hv 1223
+echo Voie 5
+./ht-caen --serial 4 --hton --ch 5 --hv 1145
+echo Voie 6
+./ht-caen --serial 4 --hton --ch 6 --hv 1200
+echo Voie 7
+./ht-caen --serial 4 --hton --ch 7 --hv 1200
+echo Voie 8
+./ht-caen --serial 4 --hton --ch 8 --hv 987
+echo Voie 9
+./ht-caen --serial 4 --hton --ch 9 --hv 986
+echo Voie 10
+./ht-caen --serial 4 --hton --ch 10 --hv 1154
+echo Voie 11
+./ht-caen --serial 4 --hton --ch 11 --hv 1200
+echo Voie 12
+./ht-caen --serial 4 --hton --ch 12 --hv 986
+echo Voie 13
+./ht-caen --serial 4 --hton --ch 13 --hv 985
+echo Voie 14
+./ht-caen --serial 4 --hton --ch 14 --hv 1186
+echo Voie 15
+./ht-caen --serial 4 --hton --ch 15 --hv 1186
+
+ 
+

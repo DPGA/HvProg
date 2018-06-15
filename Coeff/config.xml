@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CNFG>
+	<!-- -->
+	<NAME TITLE="HV_MODULE_0"		ACTIVED="1"		ADDRESS="0x0000"		COMMENT="High Voltage Out Chan  0...14" />
+	<NAME TITLE="HV_MODULE_1"		ACTIVED="0"		ADDRESS="0x0000"		COMMENT="High Voltage Out Chan 15...29" />
+	<NAME TITLE="HV_MODULE_2"		ACTIVED="0"		ADDRESS="0x0001"		COMMENT="High Voltage Out Chan 30...44" />
+	<NAME TITLE="HV_MODULE_3"		ACTIVED="0"		ADDRESS="0x0002"		COMMENT="High Voltage Out Chan 45...59" />
+
+	
+	
+	
+</CNFG>

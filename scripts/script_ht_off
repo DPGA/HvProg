@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo Script HT OFF
+
+echo CARTE 1
+
+./ht-caen --serial 1 --htoff
+
+echo CARTE 2
+
+./ht-caen --serial 2 --htoff
+
+echo CARTE 3
+
+./ht-caen --serial 3 --htoff
+
+
+echo CARTE 4
+
+./ht-caen --serial 4 --htoff
