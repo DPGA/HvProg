@@ -17,12 +17,13 @@ using namespace std;
 //#include <vmemap.h>
 
 
-HvProg::HvProg(VmeMap *pVme,u16 Num,bool Verb)
+HvProg::HvProg(VmeMap *pVme,u16 Num,string dircoeff,bool Verb)
 /*------------------------------------------------------------------------*/
 {
    pVmeHvProg = pVme;
    AdrBase = (Num << 8);
    verbose  = Verb;
+   m_dircoeff = dircoeff;
 #ifdef SERIAL
    try { 
    pserial = new SimpleSerial("/dev/ttyUSB0",9600);
@@ -38,6 +39,7 @@ HvProg::HvProg(VmeMap *pVme,u16 Num,bool Verb)
      }
 #endif    
   if (verbose) cout << "Creating "<< __FUNCTION__ << endl;
+
 } 
 
 void HvProg::SetHvPol(int pos)
@@ -102,7 +104,7 @@ bool HvProg::IsHvProg()
 			<< "FwRev=" << CFormat("%d",FwRev >> 16) 
 			<< "." <<  CFormat("%02d",FwRev & 0xff)
 			<< endl;
-  string chaine = "Coeff/Coef_poly_" + CFormat("%04X",GetBaseAddr()>>8) + ".txt";
+  string chaine = m_dircoeff + "/Coef_poly_" + CFormat("%04X",GetBaseAddr()>>8) + ".txt";
   cout << "fichier = " << chaine << endl;
   ReadFile(chaine);
   return(true);

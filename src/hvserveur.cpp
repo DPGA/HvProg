@@ -39,7 +39,7 @@ using namespace tinyxml2;
 
 //=========================================================================
 //=========================================================================
-CHvServeur::CHvServeur(int port, VmeMap *vme , int verbose)
+CHvServeur::CHvServeur(int port, VmeMap *vme ,std::string fileconfig,string dircoeff, int verbose)
 {
 	cout << "Create CHvServeur Class" << endl;
 	m_port = port;
@@ -55,6 +55,8 @@ CHvServeur::CHvServeur(int port, VmeMap *vme , int verbose)
 	m_servSock = 0;
 	m_socket = 0;
 	m_stop = 0;
+	m_fileconfig = fileconfig;
+	m_dircoeff = dircoeff;
 }	// Constructor
 
 //=========================================================================
@@ -74,10 +76,10 @@ void CHvServeur::Run(void)
 	TCP_Msg msg;
 	
 	cout << "Start Serveur on port " << m_port << endl;
-	int ret = XmlParser ("Coeff/config.xml");
+	int ret = XmlParser (m_fileconfig);//"Coeff/config.xml");
 	cout << "XmlParser ret : " << ret << endl;
 	for(int i=0; i<NB_HVMOD; i++) {
-		pHvProg[i] = new HvProg( pVme ,hvdt.hvmod[i].addr, m_verbose);
+		pHvProg[i] = new HvProg( pVme ,hvdt.hvmod[i].addr,m_dircoeff, m_verbose);
 		if(hvdt.hvmod[i].hvstat.actived) {
 			pHvProg[i]->IsHvProg();
 			pHvProg[i]->SetHvPol(HvPol);

@@ -37,9 +37,10 @@ private :
   bool   HvPos;
   string NomFichier;
   SimpleSerial *pserial;
+  string m_dircoeff;
 
 public  :
-  HvProg(VmeMap *pVme,u16 Num,bool Verb = true);
+  HvProg(VmeMap *pVme,u16 Num,string dircoeff,bool Verb = true);
   ~HvProg();
   u32 GetBaseAddr();
   bool IsHvProg(); 

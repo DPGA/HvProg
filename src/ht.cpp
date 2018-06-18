@@ -49,7 +49,9 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
- cout  << BgColor::black << FgColor::yellow << "HvProg   Version 1.02" << FgColor::white << endl;
+ cout  << BgColor::black << FgColor::yellow << "HvProg   Version 1.03 " << argc << FgColor::white << endl;
+for (int i=0;i<argc;i++) cout << argv[i] << " ";
+cout << endl;
  int HtOn = 0;
  int HtOff = 0; 
  unsigned int Ch = 0;
@@ -61,7 +63,8 @@ int main(int argc, char **argv)
  u16 TabVal[16];
  std::map <std::string,class VmeMap *> pVme; 
  int port=0;
-
+ string DirCoeff = "Coeff";
+ string FileConfig = "Coeff/config.xml";
  
 /*----------------------------------------------------------------*/
 /* Ouverture des fenetres VME					 				  */ 
@@ -89,12 +92,14 @@ int main(int argc, char **argv)
       { "verif"		,no_argument			,NULL		,'V'},
       { "serveur"		,required_argument	,NULL		,'R'},
       { "verbose"		,no_argument			,&verbose, 1 },
+      { "dircoeff"             ,required_argument		,NULL,		'd'},
+      { "config"                ,required_argument		,NULL,		'c'},		 
       { NULL			,no_argument			,NULL		, 0 }
     };
     
     
   // Invokes member function `int operator ()(void);'
-  while ((option_char = getopt_long (argc, argv, "t:i:n:b:e:s:m:a:c:l:L:P:A:M:v:N:T:S:y:x",long_options,&optionindex)) != EOF)
+  while ((option_char = getopt_long (argc, argv, "t:i:n:b:e:s:m:a:c:f:l:L:P:A:M:v:N:T:S:y:x",long_options,&optionindex)) != EOF)
     switch (option_char) {  
 	 case 'C': Mode = HV;Ch = atoi(optarg); cout << "Channel "  << FgColor::yellow << CFormat("%04X",Ch)    << FgColor::white << endl;break;
 	 case 'H': Mode = HV;Value=atof(optarg);cout << "Value Hv "  << FgColor::yellow << Value  << FgColor::white << endl;break;
@@ -103,12 +108,14 @@ int main(int argc, char **argv)
 	 case 'L': Mode = CAL;Ch = atoi(optarg);break;
 	 case 'V': Mode = VERIF;break;
 	 case 'R': Mode = SERVEUR; port= atoi(optarg); break;
+	 case 'd': DirCoeff  = optarg;cout << "dir Coeff "  << FgColor::yellow << DirCoeff    << FgColor::white << endl;break;
+	 case 'c': FileConfig =  optarg;cout << "file config "  << FgColor::yellow << FileConfig    << FgColor::white << endl;break;
 	 case '?': break; 
     }
 
 	if(Mode != SERVEUR) {
 		HvProg *pHvProg;
-		pHvProg = new HvProg( pVme["A24D32"],BoardSn); 
+		pHvProg = new HvProg( pVme["A24D32"],BoardSn,DirCoeff); 
 		pHvProg->IsHvProg();   
 
 		if ((HtOn == 1) && (HtOff == 0)) {
@@ -143,7 +150,7 @@ int main(int argc, char **argv)
 	} else {
 		cout << __FUNCTION__ << __LINE__ << " port " << port << endl;
 		CHvServeur *phvserv;
-		phvserv = new CHvServeur(port, pVme["A24D32"], verbose);
+		phvserv = new CHvServeur(port, pVme["A24D32"],FileConfig,DirCoeff, verbose);
 		phvserv->Run();
 		if(phvserv) delete (phvserv);
 	}

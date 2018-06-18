@@ -103,7 +103,7 @@ struct HVDATA
 class CHvServeur
 {
 	public:
-		CHvServeur(int port, VmeMap *vme, int verbose);
+		CHvServeur(int port, VmeMap *vme,std::string fileconfig,string dircoeff, int verbose);
 		virtual ~CHvServeur();
 		int  GetPort  (void);
 		void SetPort  (int port);
@@ -119,6 +119,8 @@ class CHvServeur
 		int    m_servSock;
 		int    m_socket;
 		int    m_stop;
+		std::string m_fileconfig;
+		std::string m_dircoeff;
 	
 		int    CreateConnection (void);
 		void   WaitConnection  (void);
